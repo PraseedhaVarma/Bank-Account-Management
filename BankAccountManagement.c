@@ -31,6 +31,8 @@ void appendNodeToList(BankAccount *newAccount);
 void saveListToFile();
 void loadListFromFile();
 
+void printDetails(Node *currentNode);
+
 void createAccount();
 void displayAll();
 void updateAccount();
@@ -316,6 +318,7 @@ int main()
 		}
 	} while (choice != 0);
 }
+
 
 
 
