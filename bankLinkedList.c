@@ -161,15 +161,13 @@ void createAccount()
 
 void displayAll()
 {
-	printf("\nAVAILABLE ACCOUNTS\n");
-
 	if (head == NULL)
 	{
 		printf("No accounts available.\n");
 		pause();
 		return;
 	}
-
+	printf("\nAVAILABLE ACCOUNTS\n");
 	Node *currentNode = head;
 	
 	while (currentNode != NULL)
@@ -243,7 +241,7 @@ void deleteAccount()
 		if (strcmp(currentNode->account.AccountNumber, accNo) == 0)
 		{
 			printf("\nCurrent details of account to be deleted...");
-	        		printDetails(currentNode);
+	         printDetails(currentNode);
 			break;
 		}
 		else
@@ -318,5 +316,6 @@ int main()
 		}
 	} while (choice != 0);
 }
+
 
 
