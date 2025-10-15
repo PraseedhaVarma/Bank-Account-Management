@@ -21,8 +21,9 @@ typedef struct Node
 Node *head = NULL;
 Node *currentNode = NULL;
 
+void removeNewline(char *text);
 void readText(char *destination, int length);
-void readNumber(float *num);
+void readNumber(float *number);
 void inputAccount(BankAccount *newAccount);
 
 void appendNodeToList(BankAccount *newAccount);
@@ -46,15 +47,21 @@ void pause()
 	getchar();
 }
 
+void removeNewline(char *text)
+{
+	text[strcspn(text, "\n")] = '\0';
+}
+
 void readText(char *destination, int length)
 {
 	fgets(destination, length, stdin);
-	destination[strcspn(destination, "\n")] = '\0';
+	removeNewline(destination);
 }
 
-void readNumber(float *num)
+void readNumber(float *number)
 {
-	scanf("%f", num);
+	scanf("%f", number)
+		;
 	getchar();
 }
 
@@ -65,7 +72,7 @@ void inputAccount(BankAccount *newAccount)
 
 	printf("Enter Account Holder Name: ");
 	readText(newAccount->AccountHolderName, LENGTH);
-
++++++
 	printf("Enter Account Balance: ");
 	readNumber(&newAccount->Balance);
 }
@@ -132,12 +139,9 @@ void loadListFromFile()
 
 void printDetails(Node *currentNode)
 {
-	if (currentNode == NULL)
-		return;
-
-	printf("\nAccount No : %s", currentNode->account.AccountNumber);
+	printf("\nAccount No: %s", currentNode->account.AccountNumber);
 	printf("\nHolder Name: %s", currentNode->account.AccountHolderName);
-	printf("\nBalance    : %f\n", currentNode->account.Balance);
+	printf("\nBalance: %f\n", currentNode->account.Balance);
 	printf("-----------------------------\n");
 }
 
@@ -316,3 +320,4 @@ int main()
 		}
 	} while (choice != 0);
 }
+
