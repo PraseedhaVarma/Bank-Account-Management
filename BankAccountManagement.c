@@ -62,8 +62,7 @@ void readText(char *destination, int length)
 
 void readNumber(float *number)
 {
-	scanf("%f", number)
-		;
+	scanf("%f", number);
 	getchar();
 }
 
@@ -74,11 +73,10 @@ void inputAccount(BankAccount *newAccount)
 
 	printf("Enter Account Holder Name: ");
 	readText(newAccount->AccountHolderName, LENGTH);
-+++++
+	
 	printf("Enter Account Balance: ");
 	readNumber(&newAccount->Balance);
 }
-
 
 void appendNodeToList(BankAccount *newAccount)
 {
@@ -318,6 +316,7 @@ int main()
 		}
 	} while (choice != 0);
 }
+
 
 
 
