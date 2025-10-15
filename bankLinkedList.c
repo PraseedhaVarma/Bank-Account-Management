@@ -224,8 +224,6 @@ void updateAccount()
 
 void deleteAccount()
 {
-	printf("\nDELETE ACCOUNT\n");
-
 	if (head == NULL)
 	{
 		printf("No records to delete.\n");
@@ -320,4 +318,5 @@ int main()
 		}
 	} while (choice != 0);
 }
+
 
